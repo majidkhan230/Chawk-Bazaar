@@ -5,9 +5,7 @@ const ModalB = ({data,children}) => {
   const {modal2Open,setModal2Open} =data;
   return (
     <>
-      {/* <Button type="primary" onClick={() => setModal2Open(true)}>
-       hit me
-      </Button> */}
+
       <Modal
         width={1000}
       

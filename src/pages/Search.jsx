@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useProducts } from "../context/ProductContext";
 import ProdCard from "../components/common/ProdCard";
+import LoadingC from "../components/common/LoadingC";
+import { Empty } from "antd";
 
 const Search = () => {
   const { products } = useProducts();
@@ -78,9 +80,7 @@ const Search = () => {
           <h1 className="text-2xl mb-4">Products</h1>
 
           {loading ? (
-            <div className="text-2xl font-bold col-span-full text-center">
-              Loading products...
-            </div>
+           <LoadingC/>
           ) : (
             <div
               id="productList"
@@ -91,8 +91,8 @@ const Search = () => {
                   <ProdCard key={product.id} data={product} />
                 ))
               ) : (
-                <div className="text-2xl font-bold col-span-full text-center">
-                  Sorry, no data found
+                <div className="col-span-full items-center justify-center w-full h-full">
+                 <Empty />
                 </div>
               )}
             </div>
