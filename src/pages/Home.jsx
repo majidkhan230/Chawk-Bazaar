@@ -2,12 +2,11 @@ import React, { useContext, useEffect, useState } from "react";
 import SimpleSlider from "../components/common/Slider";
 import CompCard from "../components/common/CompCard";
 import { CompCardData } from "../Utils/constant/CompCardData";
-import axios from "axios";
-import { ProductContext, useProducts } from "../context/productContext";
 import ProdCard from "../components/common/ProdCard";
 import { Button, Card, Rate } from "antd";
-import Sliders from "../components/common/Sliders";
-import ModalB from "../components/common/Modal";
+
+import {useCategories } from "../context/CategoriesContext";
+import { useProducts } from "../context/ProductContext";
 
 const Home = () => {
   const [view, setViewAll] = useState(8);
@@ -26,27 +25,7 @@ const Home = () => {
   //   image: "https://placeimg.com/400/400/fashion",
   // };
 
-  const [categories, setCategories] = useState([]);
-  const getCategory = async () => {
-    try {
-      const data = await axios.get(
-        "https://api.escuelajs.co/api/v1/categories"
-      );
-      // setCategories(data?.data?.products)
-      // console.log(data?.data)
-      const filterCategory = data?.data.filter(
-        (item, index) => item.name !== "New Category"
-      );
-      setCategories(filterCategory);
-      // console.log(filterCategory)
-    } catch (error) {
-      console.log(error.message);
-    }
-  };
-
-  useEffect(() => {
-    getCategory();
-  }, []);
+const {categories,setCategories} = useCategories();
 
   return (
     <div className="px-10">

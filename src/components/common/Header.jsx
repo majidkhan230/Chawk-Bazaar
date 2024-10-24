@@ -1,20 +1,29 @@
+import { Button } from 'antd'
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 
 const Header = () => {
+  
   return (
-    <div className="Header flex items-center justify-between px-20 py-5">
+    <div className="Header  flex items-center justify-between px-20 py-5">
     <Link to={"/"}>
      <img src="/assets/images/logo.svg" alt="" />
     </Link>
 
-    <ul className="flex gap-8 text-md">
+    <ul className="flex items-center gap-8 text-md">
       <Link to={"/contact"}>
         <li>Contact</li>
       </Link>
       <Link to={"/product"}>
         <li>Product</li>
       </Link>
+      <Link to={"/search"}>
+        <li>Search</li>
+      </Link>
+      <Button onClick={()=>{
+       toast.success("show modal")
+      }}>SignIn</Button>
     </ul>
     </div>
   )
