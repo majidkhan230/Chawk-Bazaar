@@ -76,7 +76,7 @@ const Search = () => {
           </div>
         </aside>
 
-        <main className="w-full md:w-3/4 p-4 bg-gray-100">
+        <main className="w-full min-h-screen md:w-3/4 p-4 bg-gray-100">
           <h1 className="text-2xl mb-4">Products</h1>
 
           {loading ? (
@@ -84,14 +84,14 @@ const Search = () => {
           ) : (
             <div
               id="productList"
-              className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4"
+              className="grid justify-center  sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {filterProducts.length > 0 ? (
                 filterProducts.map((product) => (
                   <ProdCard key={product.id} data={product} />
                 ))
               ) : (
-                <div className="col-span-full items-center justify-center w-full h-full">
+                <div className="col-span-full  items-center justify-center w-full h-full">
                  <Empty />
                 </div>
               )}
