@@ -52,7 +52,7 @@ const Home = () => {
       </div>
 
       <div className="featuresCategory flex flex-col gap-4">
-        <h1 className="text-3xl font-bold my-4">Featured Category</h1>
+        <h1 className="text-2xl md:text-3xl font-bold my-4">Featured Category</h1>
         <div className="">
           <SimpleSlider slidesToShow={4}>
             {categories.map((category) => {
@@ -79,22 +79,24 @@ const Home = () => {
         <h1 className="text-2xl md:text-3xl font-bold my-4">
           Featured Products
         </h1>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-          {loading ? (
-            <div className="col-span-full my-6">
-              <LoadingC />
-            </div>
-          ) : (
-            products.slice(0, view).map((product) => (
-              <ProdCard
-                onClick={() => {
-                  console.log("just clicked", product.id);
-                }}
-                key={product.id}
-                data={product}
-              />
-            ))
-          )}
+        <div className="mx-auto container">
+          <div className="grid  grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            {loading ? (
+              <div className="col-span-full my-6">
+                <LoadingC />
+              </div>
+            ) : (
+              products.slice(0, view).map((product) => (
+                <ProdCard
+                  onClick={() => {
+                    console.log("just clicked", product.id);
+                  }}
+                  key={product.id}
+                  data={product}
+                />
+              ))
+            )}
+          </div>
         </div>
         <div className="flex justify-center items-center mt-6">
           <Button

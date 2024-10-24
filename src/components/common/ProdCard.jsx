@@ -14,31 +14,37 @@ const ProdCard = ({ data }) => {
   };
 
   return (
-    <div>
+    <div className="w-full h-full">
       <div onClick={showDetails}>
         <Card
           hoverable
-          className="w-36 md:w-60"
+          style={{width:"100%"}}
           cover={
             <img
               alt="example"
               src={image}
               className="h-36 md:h-48 object-cover border-x border-t"
+            
             />
           }
         >
+      
           <Meta title={title} />
 
+     
           <div className="mt-2">
             <p className="text-xs text-gray-600 mb-1">
               {description.split(" ").slice(0, 10).join(" ") +
                 (description.split(" ").length > 10 ? "..." : "")}
             </p>
-            <div className="text-lg font-semibold text-red-600">${price}</div>
+            <div className="text-lg font-semibold text-red-600">
+              ${price}
+            </div>
           </div>
         </Card>
       </div>
 
+  
       <ModalB data={{ modal2Open, setModal2Open }}>
         <div className="bg-gray-100 p-6">
           <div className="container mx-auto">

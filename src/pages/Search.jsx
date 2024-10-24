@@ -84,7 +84,7 @@ const Search = () => {
           ) : (
             <div
               id="productList"
-              className="grid justify-center  sm:grid-cols-2 lg:grid-cols-3 gap-4"
+              className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 gap-4"
             >
               {filterProducts.length > 0 ? (
                 filterProducts.map((product) => (
