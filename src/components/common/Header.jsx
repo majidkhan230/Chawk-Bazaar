@@ -10,7 +10,7 @@ const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <header className="Header flex items-center justify-between px-6 py-4 md:px-20 md:py-5 bg-white shadow-md">
+    <header className="Header sticky top-0 z-50 flex items-center justify-between px-6 py-4 md:px-20 md:py-5 bg-white shadow-md">
       <Link to="/">
         <img src="/assets/images/logo.svg" alt="Logo" className="w-24 md:w-36" />
       </Link>

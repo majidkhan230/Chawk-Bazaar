@@ -22,24 +22,24 @@ const Home = () => {
 
   return (
     <div className="px-4 md:px-10">
-      <div className="w-full h-full md:h-[500px] overflow-hidden rounded-md">
+      <div className="w-full h-full md:h-[500px] overflow-hidden rounded-md mt-4">
         <SimpleSlider slidesToShow={1}>
           <div>
             <img
               src="/assets/images/banner-1.webp"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-[25vh] md:h-full"
             />
           </div>
           <div>
             <img
               src="/assets/images/banner-4.webp"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-[25vh] md:h-full"
             />
           </div>
           <div>
             <img
               src="/assets/images/banner-5.webp"
-              className="object-cover w-full h-full"
+              className="object-cover w-full h-[25vh] md:h-full"
             />
           </div>
         </SimpleSlider>
@@ -79,7 +79,7 @@ const Home = () => {
         <h1 className="text-2xl md:text-3xl font-bold my-4">
           Featured Products
         </h1>
-        <div className="grid justify-center md:grid-cols-4 gap-4 md:gap-6">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
           {loading ? (
             <div className="col-span-full my-6">
               <LoadingC />

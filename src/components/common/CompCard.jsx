@@ -5,7 +5,7 @@ const CompCard = ({ data }) => {
   return (
     <div
       style={{ backgroundColor: boxColor }}
-      className="w-full md:w-1/2 h-64 rounded-md border p-4 md:p-10 drop-shadow-md relative flex items-center"
+      className="w-full  md:w-1/2 h-44 md:h-64 rounded-md border p-4 md:p-10 drop-shadow-md relative flex items-center"
     >
       <div className="uppercase z-10">
         <h1 className="text-lg md:text-xl font-medium">{title}</h1>

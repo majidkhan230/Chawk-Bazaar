@@ -18,22 +18,24 @@ const ProdCard = ({ data }) => {
       <div onClick={showDetails}>
         <Card
           hoverable
-          className="w-60"
+          className="w-36 md:w-60"
           cover={
             <img
               alt="example"
               src={image}
-              className="h-48 object-cover border-x border-t"
+              className="h-36 md:h-48 object-cover border-x border-t"
             />
           }
         >
-          <Meta
-            title={title}
-            description={
-              description.split(" ").slice(0, 10).join(" ") +
-              (description.split(" ").length > 10 ? "..." : "")
-            }
-          />
+          <Meta title={title} />
+
+          <div className="mt-2">
+            <p className="text-xs text-gray-600 mb-1">
+              {description.split(" ").slice(0, 10).join(" ") +
+                (description.split(" ").length > 10 ? "..." : "")}
+            </p>
+            <div className="text-lg font-semibold text-red-600">${price}</div>
+          </div>
         </Card>
       </div>
 

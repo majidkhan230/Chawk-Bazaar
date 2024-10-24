@@ -16,10 +16,12 @@ export default function SimpleSlider({slidesToShow,children}) {
     arrows: true,
   };
   return (
-    <Slider {...settings}>
+   <div className="">
+     <Slider {...settings}>
      
-    {children}
-      
-    </Slider>
+     {children}
+       
+     </Slider>
+   </div>
   );
 }
